@@ -1,0 +1,15 @@
+services:
+  # Frontend React App
+  - type: web
+    name: farmxpert-frontend
+    env: static
+    plan: free
+    buildCommand: "npm run build"
+    staticPublishPath: build
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: REACT_APP_API_URL
+        value: https://farmxpert-backend.onrender.com
+      - key: REACT_APP_ENV
+        value: production

@@ -1,0 +1,95 @@
+/* Chat Agent Container */
+.chat-agent-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.chat-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Main App Container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background: var(--primary-bg);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Main Dashboard Area */
+.main-dashboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: var(--card-bg);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .main-dashboard {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .main-dashboard {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-dashboard {
+    padding-top: 60px;
+  }
+}
+
+/* Loading States */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--tertiary-bg) 25%,
+    var(--secondary-bg) 50%,
+    var(--tertiary-bg) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .app-container, .chat-agent-container {
+    display: block;
+    height: auto;
+  }
+  
+  .main-dashboard {
+    padding-top: 0;
+  }
+}
+

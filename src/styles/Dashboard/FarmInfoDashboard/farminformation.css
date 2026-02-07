@@ -1,0 +1,392 @@
+/* ===== FARMER DASHBOARD STYLES ===== */
+
+/* Container */
+.container-farminformation {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Dashboard Container */
+  .dashboard-container-farminformation {
+    padding: 2rem 0;
+    min-height: calc(100vh - 140px);
+    background: var(--secondary-bg);
+    color: var(--text-primary);
+  }
+  
+  /* Dashboard Header */
+  .dashboard-header-farminformation {
+    margin-bottom: 2rem;
+    animation: fadeInUp-farminformation 0.6s ease-out;
+  }
+  
+  .dashboard-title-farminformation {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .dashboard-subtitle-farminformation {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+  }
+  
+  /* Stats Grid */
+  .stats-grid-farminformation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Stat Card */
+  .stat-card-farminformation {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px var(--shadow-light);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    color: var(--text-primary);
+  }
+  
+  .stat-card-farminformation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-accent), var(--brand-primary), var(--brand-accent));
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  
+  .stat-card-farminformation:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px var(--shadow-medium);
+  }
+  
+  .stat-card-farminformation:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .stat-header-farminformation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .stat-title-farminformation {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  
+  .stat-icon-farminformation {
+    width: 24px;
+    height: 24px;
+    color: var(--text-secondary);
+  }
+  
+  .stat-value-farminformation {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-status-farminformation {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .status-optimal-farminformation {
+    color: var(--success);
+  }
+  
+  .status-warning-farminformation {
+    color: var(--warning);
+  }
+  
+  .status-critical-farminformation {
+    color: var(--error);
+  }
+  
+  /* Chart Container */
+  .chart-container-farminformation {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px var(--shadow-light);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-light);
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+  }
+  
+  .chart-header-farminformation {
+    margin-bottom: 1rem;
+  }
+  
+  .chart-title-farminformation {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .chart-description-farminformation {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+  
+  /* Chart Buttons */
+  .chart-buttons-farminformation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+    margin-top: 1rem;
+    border-radius: 12px;
+    background: var(--tertiary-bg);
+    padding: 4px;
+    gap: 6px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 8px 32px var(--shadow-light);
+    width: fit-content;
+  }
+  
+  .chart-button-farminformation {
+    border: none;
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--glass-bg);
+    min-width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .chart-button-farminformation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary), var(--brand-primary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .chart-button-farminformation:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px var(--shadow-medium);
+  }
+  
+  .chart-button-farminformation.active-farminformation {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary), var(--brand-primary));
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.356);
+  }
+  
+  .chart-button-farminformation.active-farminformation::before {
+    opacity: 1;
+  }
+  
+  /* Ripple effect */
+  .chart-button-farminformation::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--glass-border);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+  }
+  
+  .chart-button-farminformation:active::after {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .chart-content-farminformation {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Alert Styles */
+  .alert-farminformation {
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border-left: 4px solid;
+    animation: fadeInLeft-farminformation 0.5s ease-out;
+    color: var(--text-primary);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .alert-info-farminformation {
+    background: var(--info-bg);
+    border-color: var(--info);
+  }
+  
+  .alert-warning-farminformation {
+    background: var(--warning-bg);
+    border-color: var(--warning);
+  }
+  
+  .alert-success-farminformation {
+    background: var(--success-bg);
+    border-color: var(--success);
+  }
+  
+  /* Button Styles */
+  .btn-farminformation {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+  }
+  
+  .btn-farminformation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-farminformation:hover::before {
+    left: 100%;
+  }
+  
+  .btn-primary-farminformation {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+  }
+  
+  .btn-primary-farminformation:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+  }
+  
+  .btn-primary-farminformation:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp-farminformation {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInLeft-farminformation {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes rotate-farminformation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-rotate-farminformation {
+    animation: rotate-farminformation 1s linear infinite;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .stats-grid-farminformation {
+      grid-template-columns: 1fr;
+    }
+  
+    .chart-buttons-farminformation {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .chart-button-farminformation {
+      width: 100%;
+    }
+  
+    .dashboard-title-farminformation {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dashboard-container-farminformation {
+      padding: 1rem 0;
+    }
+  
+    .stat-card-farminformation,
+    .chart-container-farminformation {
+      padding: 1rem;
+    }
+  
+    .dashboard-title-farminformation {
+      font-size: 1.75rem;
+    }
+  
+    .dashboard-subtitle-farminformation {
+      font-size: 1rem;
+    }
+  }

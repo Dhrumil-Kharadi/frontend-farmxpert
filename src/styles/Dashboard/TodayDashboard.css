@@ -1,0 +1,244 @@
+.today-page {
+  padding: 1.25rem 1.25rem 2rem;
+  color: var(--text-primary);
+  background: var(--secondary-bg);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.today-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.today-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.today-subtitle {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  align-items: center;
+}
+
+.today-pill {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--card-bg);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.pill-online {
+  border-color: rgba(16, 185, 129, 0.35);
+  color: rgba(16, 185, 129, 1);
+}
+
+.pill-offline {
+  border-color: rgba(239, 68, 68, 0.35);
+  color: rgba(239, 68, 68, 1);
+}
+
+.pill-muted {
+  opacity: 0.9;
+}
+
+.today-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.today-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.today-btn:hover {
+  border-color: var(--border-medium);
+  transform: translateY(-1px);
+}
+
+.today-btn:active {
+  transform: translateY(0);
+}
+
+.today-btn.primary {
+  background: var(--brand-primary);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.today-btn.secondary {
+  background: var(--tertiary-bg);
+}
+
+.today-btn.link {
+  background: transparent;
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--brand-primary);
+}
+
+.today-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.action-card {
+  grid-column: span 6;
+  background: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.action-card.good {
+  border-left: 4px solid rgba(16, 185, 129, 1);
+}
+
+.action-card.warning {
+  border-left: 4px solid rgba(245, 158, 11, 1);
+}
+
+.action-card.info {
+  border-left: 4px solid rgba(59, 130, 246, 1);
+}
+
+.action-card-top {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.action-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tertiary-bg);
+  border: 1px solid var(--border-light);
+  flex-shrink: 0;
+}
+
+.action-card-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.action-card-action {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.action-card-meta {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.meta-label {
+  width: 85px;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.meta-value {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-bullet {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.meta-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--tertiary-bg);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.meta-muted {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.action-card-footer {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.today-footnote {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .action-card {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 480px) {
+  .today-page {
+    padding: 1rem 0.9rem 1.5rem;
+  }
+  .today-header {
+    flex-direction: column;
+  }
+  .today-actions {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "short_name": "FarmXpert",
+  "name": "FarmXpert - Multi-Agent AI Platform for Precision Farming",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2c3e50",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "description": "AI-powered precision farming assistant for crop planning, pest control, and farm management.",
+  "orientation": "portrait",
+  "categories": [
+    "productivity",
+    "utilities",
+    "agriculture"
+  ]
+}

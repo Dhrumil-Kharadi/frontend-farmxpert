@@ -1,0 +1,350 @@
+/* Farm Map Container */
+.farm-map-container {
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--primary-bg);
+  position: relative;
+}
+
+.farm-map-header {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Info Panel */
+.farm-map-info-panel {
+  position: absolute;
+  top: 80px;
+  right: 30px;
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--card-shadow);
+  z-index: 1000;
+  max-width: 300px;
+  border: 1px solid var(--card-border);
+}
+
+.farm-map-info-title {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-color, #007bff);
+}
+
+/* Workflow Steps */
+.farm-map-workflow-step {
+  background: var(--secondary-bg);
+  padding: 10px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border-left: 4px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-number {
+  background: var(--text-muted);
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.step-completed {
+  border-left-color: #28a745;
+}
+
+.step-completed .step-number {
+  background: #28a745;
+}
+
+.step-active {
+  border-left-color: #ffc107;
+  background: rgba(255, 193, 7, 0.1);
+}
+
+.step-active .step-number {
+  background: #ffc107;
+  color: #000;
+}
+
+.step-inactive .step-number {
+  background: var(--text-muted);
+}
+
+/* Drawing Mode Indicator */
+.farm-map-drawing-indicator {
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 12px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.drawing-inactive {
+  background: var(--secondary-bg);
+  color: var(--text-muted);
+  border: 2px solid var(--card-border);
+}
+
+.drawing-active {
+  background: rgba(40, 167, 69, 0.15);
+  color: #28a745;
+  border: 2px solid #28a745;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+/* Map Container */
+.farm-map-leaflet {
+  height: 55vh;
+  min-height: 400px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+/* Controls Section */
+.farm-map-controls {
+  padding: 20px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Button Group */
+.farm-map-button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.farm-map-btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.farm-map-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.farm-map-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+  color: #000;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+}
+
+/* Status Panel */
+.farm-map-status-panel {
+  background: var(--card-bg);
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 5px solid var(--accent-color, #007bff);
+  box-shadow: 0 2px 10px var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.farm-map-status-panel.status-success {
+  border-left-color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+}
+
+.status-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-color, #007bff);
+}
+
+.status-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+/* Form Section */
+.farm-map-form-section {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px var(--card-shadow);
+  border: 1px solid var(--card-border);
+}
+
+.form-title {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent-color, #007bff);
+}
+
+/* Actions Section */
+.farm-map-actions {
+  background: var(--secondary-bg);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.actions-title {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.actions-tip {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .farm-map-info-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .farm-map-leaflet {
+    height: 45vh;
+    min-height: 300px;
+  }
+
+  .farm-map-button-group {
+    flex-direction: column;
+  }
+
+  .farm-map-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .status-content {
+    flex-direction: column;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Leaflet Customizations */
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border: none !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--secondary-bg) !important;
+}
+
+.leaflet-draw-toolbar a {
+  background: var(--card-bg) !important;
+  border: none !important;
+}

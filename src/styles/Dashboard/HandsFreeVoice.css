@@ -1,0 +1,555 @@
+.handsfree-voice-page {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(900px 600px at 50% 30%, var(--green-translucent-10), var(--transparent)),
+    radial-gradient(700px 520px at 20% 20%, color-mix(in srgb, var(--info) 18%, transparent), var(--transparent)),
+    radial-gradient(700px 520px at 80% 80%, color-mix(in srgb, var(--error) 10%, transparent), var(--transparent)),
+    linear-gradient(180deg, var(--primary-bg) 0%, color-mix(in srgb, var(--primary-bg) 65%, var(--tertiary-bg)) 100%);
+}
+
+.handsfree-voice-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  width: min(720px, 100%);
+  padding: 22px 22px 96px;
+  border-radius: 18px;
+  border: 1px solid var(--glass-border);
+  background: color-mix(in srgb, var(--card-bg) 80%, transparent);
+  box-shadow: 0 20px 60px var(--shadow-light);
+  backdrop-filter: blur(14px);
+}
+
+.handsfree-voice-topbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.handsfree-voice-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: color-mix(in srgb, var(--card-bg) 75%, transparent);
+  backdrop-filter: blur(10px);
+  color: var(--text-primary);
+}
+
+.handsfree-voice-pill-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  opacity: 0.9;
+}
+
+.handsfree-voice-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--border-medium);
+}
+
+.handsfree-voice-dot-listening {
+  background: var(--info);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--info) 25%, transparent);
+}
+
+.handsfree-voice-dot-thinking {
+  background: var(--warning);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--warning) 25%, transparent);
+}
+
+.handsfree-voice-dot-speaking {
+  background: var(--success);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--success) 25%, transparent);
+}
+
+.handsfree-voice-dot-error {
+  background: var(--error);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--error) 25%, transparent);
+}
+
+.handsfree-voice-dot-idle {
+  background: var(--processing);
+}
+
+.handsfree-voice-api {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border-medium);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: var(--text-secondary);
+}
+
+.handsfree-voice-api.ok {
+  border-color: color-mix(in srgb, var(--success) 55%, transparent);
+  color: var(--success);
+}
+
+.handsfree-voice-api.bad {
+  border-color: color-mix(in srgb, var(--error) 55%, transparent);
+  color: var(--error);
+}
+
+.handsfree-voice-mic {
+  width: 132px;
+  height: 132px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-medium);
+  background: color-mix(in srgb, var(--card-bg) 55%, transparent);
+  backdrop-filter: blur(12px);
+  color: var(--text-secondary);
+}
+
+.handsfree-voice-mic-active {
+  border-color: var(--border-accent);
+  color: var(--brand-primary);
+  box-shadow:
+    0 0 0 10px var(--green-translucent-10),
+    0 0 60px var(--shadow-green-medium);
+}
+
+.handsfree-voice-mic-icon {
+  display: block;
+}
+
+.handsfree-voice-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.handsfree-voice-subtitle {
+  max-width: 520px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.handsfree-voice-actions {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  width: min(520px, calc(100% - 48px));
+  display: flex;
+  justify-content: center;
+}
+
+.handsfree-voice-actions-listening {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.handsfree-voice-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  padding: 14px 22px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.handsfree-voice-livebtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.handsfree-voice-livebtn-inner {
+  width: 142px;
+  height: 142px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at 30% 25%, var(--white-translucent-20), var(--white-translucent-05)),
+    linear-gradient(180deg, color-mix(in srgb, var(--secondary-bg) 75%, transparent), color-mix(in srgb, var(--primary-bg) 55%, transparent));
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 18px 50px var(--shadow-medium),
+    0 0 0 1px color-mix(in srgb, var(--glass-border) 70%, transparent) inset;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.handsfree-voice-livebtn:hover .handsfree-voice-livebtn-inner {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.handsfree-voice-livebtn.active .handsfree-voice-livebtn-inner {
+  box-shadow:
+    0 18px 50px var(--shadow-medium),
+    0 0 0 16px color-mix(in srgb, var(--success) 14%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--glass-border) 70%, transparent) inset;
+}
+
+.handsfree-voice-livebtn.listening .handsfree-voice-livebtn-inner {
+  background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--info) 65%, transparent), color-mix(in srgb, var(--info) 15%, transparent));
+}
+
+.handsfree-voice-livebtn.thinking .handsfree-voice-livebtn-inner {
+  background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--warning) 65%, transparent), color-mix(in srgb, var(--warning) 15%, transparent));
+}
+
+.handsfree-voice-livebtn.speaking .handsfree-voice-livebtn-inner {
+  background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--success) 65%, transparent), color-mix(in srgb, var(--success) 15%, transparent));
+}
+
+.handsfree-voice-livebtn.error .handsfree-voice-livebtn-inner {
+  background: radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--error) 65%, transparent), color-mix(in srgb, var(--error) 15%, transparent));
+}
+
+.handsfree-voice-livebtn.active.listening .handsfree-voice-livebtn-inner {
+  animation: hf-pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes hf-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.handsfree-voice-livebtn-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0.9;
+}
+
+.handsfree-voice-captions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.handsfree-voice-caption {
+  border-radius: 14px;
+  padding: 12px 14px;
+  text-align: left;
+  border: 1px solid var(--glass-border);
+  background: color-mix(in srgb, var(--card-bg) 72%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.handsfree-voice-caption-head {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.35px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.handsfree-voice-caption-body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  min-height: 20px;
+}
+
+.handsfree-voice-error {
+  color: color-mix(in srgb, var(--error) 65%, var(--text-primary));
+  background: color-mix(in srgb, var(--error) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--error) 35%, transparent);
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.handsfree-voice-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  width: min(720px, calc(100% - 48px));
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: color-mix(in srgb, var(--card-bg) 74%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.handsfree-voice-control {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: color-mix(in srgb, var(--card-bg) 70%, transparent);
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  padding: 14px 16px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.handsfree-voice-control:hover {
+  border-color: color-mix(in srgb, var(--border-accent) 65%, transparent);
+}
+
+.handsfree-voice-control.danger {
+  background: color-mix(in srgb, var(--error) 14%, transparent);
+  border-color: color-mix(in srgb, var(--error) 45%, transparent);
+}
+
+.handsfree-voice-btn-icon {
+  display: inline-flex;
+}
+
+.handsfree-voice-btn-start {
+  width: min(420px, 100%);
+  background: var(--btn-primary);
+  border-color: var(--btn-primary);
+  color: var(--text-inverse);
+}
+
+.handsfree-voice-btn-start:hover {
+  background: var(--btn-primary-hover);
+  border-color: var(--btn-primary-hover);
+}
+
+.handsfree-voice-btn-end {
+  width: min(420px, 100%);
+  background: var(--btn-danger);
+  border-color: var(--btn-danger);
+  color: var(--text-inverse);
+}
+
+.handsfree-voice-btn-end:hover {
+  background: var(--btn-danger-hover);
+  border-color: var(--btn-danger-hover);
+}
+
+.handsfree-voice-mini {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-medium);
+  background: color-mix(in srgb, var(--card-bg) 70%, transparent);
+  backdrop-filter: blur(10px);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.handsfree-voice-mini:hover {
+  border-color: var(--border-accent);
+}
+
+@media (max-width: 520px) {
+  .handsfree-voice-page {
+    padding: 16px;
+  }
+
+  .handsfree-voice-center {
+    padding: 18px 16px 92px;
+  }
+
+  .handsfree-voice-mic {
+    width: 118px;
+    height: 118px;
+  }
+
+  .handsfree-voice-topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .handsfree-voice-livebtn-inner {
+    width: 132px;
+    height: 132px;
+  }
+
+  .handsfree-voice-controls {
+    bottom: 16px;
+    width: calc(100% - 32px);
+  }
+
+  .handsfree-voice-title {
+    font-size: 18px;
+  }
+}
+
+/* LiveVoiceInterface (utility-class) UI polish - CSS only, scoped to the HandsFreeVoice root */
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 800px at 50% 30%, var(--green-translucent-10), var(--overlay-dark)),
+    radial-gradient(900px 600px at 20% 20%, color-mix(in srgb, var(--info) 16%, transparent), var(--transparent)),
+    radial-gradient(700px 520px at 80% 80%, color-mix(in srgb, var(--error) 10%, transparent), var(--transparent)),
+    linear-gradient(180deg, color-mix(in srgb, var(--secondary-bg) 35%, #000) 0%, color-mix(in srgb, var(--primary-bg) 20%, #000) 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.22;
+  mask-image: radial-gradient(circle at 50% 45%, rgba(0,0,0,1), rgba(0,0,0,0) 70%);
+}
+
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden > .relative.z-10.p-6 {
+  padding: 22px 22px;
+}
+
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden .tracking-wider {
+  letter-spacing: 0.18em;
+}
+
+/* Central ring: richer glass + subtle animated highlight */
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden .w-48.h-48.rounded-full.border-4 {
+  background:
+    radial-gradient(circle at 30% 25%, var(--white-translucent-10), var(--white-translucent-05)),
+    linear-gradient(180deg, color-mix(in srgb, var(--secondary-bg) 28%, #000), color-mix(in srgb, var(--primary-bg) 15%, #000));
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  position: relative;
+}
+
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden .w-48.h-48.rounded-full.border-4::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 999px;
+  background: conic-gradient(from 210deg, color-mix(in srgb, var(--success) 0%, transparent), color-mix(in srgb, var(--success) 22%, transparent), color-mix(in srgb, var(--info) 14%, transparent), color-mix(in srgb, var(--success) 0%, transparent));
+  filter: blur(10px);
+  opacity: 0.65;
+  animation: hf-live-spin 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes hf-live-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Heading + helper text */
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden h2 {
+  text-shadow: 0 10px 40px rgba(0,0,0,0.55);
+}
+
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden p {
+  color: color-mix(in srgb, var(--text-inverse) 66%, transparent);
+}
+
+/* Buttons: premium gradients + focus styles */
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden button {
+  outline: none;
+}
+
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden button:focus-visible {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--success) 28%, transparent), 0 0 0 1px rgba(255, 255, 255, 0.10) inset;
+}
+
+/* START button */
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden .bg-emerald-600.rounded-full {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--success) 92%, #fff), color-mix(in srgb, var(--brand-light) 78%, #fff));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 18px 60px color-mix(in srgb, var(--success) 22%, transparent),
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden .bg-emerald-600.rounded-full:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow:
+    0 22px 80px color-mix(in srgb, var(--success) 28%, transparent),
+    0 12px 34px rgba(0, 0, 0, 0.50),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Mute button */
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden button.p-6.rounded-full.border-2 {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.52);
+  border-color: rgba(148, 163, 184, 0.26);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden button.p-6.rounded-full.border-2:hover {
+  border-color: rgba(52, 211, 153, 0.48);
+}
+
+/* END button */
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden .bg-red-600.rounded-full {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--error) 92%, #fff), color-mix(in srgb, var(--error) 72%, #000));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 18px 60px color-mix(in srgb, var(--error) 16%, transparent),
+    0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden .bg-red-600.rounded-full:hover {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Responsive polish */
+@media (max-width: 520px) {
+  div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden > .relative.z-10.p-6 {
+    padding: 18px 16px;
+  }
+
+  div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden .w-48.h-48.rounded-full.border-4 {
+    width: 168px;
+    height: 168px;
+  }
+
+  div.flex.flex-col.h-full.bg-slate-900.text-white.relative.overflow-hidden .px-12.py-6.text-xl {
+    padding: 18px 22px;
+    font-size: 16px;
+  }
+}

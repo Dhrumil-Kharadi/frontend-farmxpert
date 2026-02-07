@@ -1,0 +1,496 @@
+/* Chat-Agent Container - Parent Flex Container */
+.chat-agent-container-AgentDetail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover strip on the far right to reveal the details panel */
+.hover-reveal-AgentDetail {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 100vh;
+  z-index: 1001;
+  touch-action: none;
+}
+
+/* Fullscreen overlay for mobile to close panel on outside tap */
+.agent-details-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 1000;
+  touch-action: none;
+}
+
+/* Chat Wrapper - Takes remaining space */
+.chat-wrapper-AgentDetail {
+  flex: 1;
+  min-width: 0;
+  height: 97.5vh;
+}
+
+/* Agent Details Wrapper - Main Container */
+.agent-details-wrapper-AgentDetail {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--card-bg);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+}
+
+/* Expanded State - Full Width */
+.agent-details-wrapper-AgentDetail.expanded-AgentDetail { 
+  width: 300px; 
+  height: 100%;
+}
+
+/* Collapsed State - Minimal Width */
+.agent-details-wrapper-AgentDetail.collapsed-AgentDetail { width: 0; }
+
+/* Agent Details Container */
+.container-AgentDetail {
+  background: var(--card-bg);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 300px;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+/* Hide container when collapsed */
+.agent-details-wrapper-AgentDetail.collapsed-AgentDetail .container-AgentDetail {
+  opacity: 0;
+  transform: translateX(20px);
+  pointer-events: none;
+  height: 100vh;
+}
+
+/* Show container when expanded */
+.agent-details-wrapper-AgentDetail.expanded-AgentDetail .container-AgentDetail {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  height: 100%;
+}
+
+.container-AgentDetail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.container-AgentDetail:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--shadow-medium);
+}
+
+/* Panel Header with Toggle Button */
+.header-AgentDetail {
+  padding: 12px 16px 10px;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-AgentDetail h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-AgentDetail h3::before {
+  content: '🤖';
+  font-size: 0.9em;
+  animation: pulse-AgentDetail 2s infinite;
+}
+
+/* Toggle Button in Header */
+.header-AgentDetail .agent-details-toggle-AgentDetail {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px var(--shadow-medium);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  touch-action: manipulation;
+}
+
+.header-AgentDetail .agent-details-toggle-AgentDetail:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.header-AgentDetail .agent-details-toggle-AgentDetail:active {
+  transform: scale(0.95);
+}
+
+/* Collapsed State Toggle Button - Always visible on right edge */
+.collapsed-toggle-AgentDetail {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px var(--shadow-medium);
+  transition: all 0.3s ease;
+  z-index: 100;
+  flex-shrink: 0;
+  touch-action: manipulation;
+}
+
+.collapsed-toggle-AgentDetail:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.collapsed-toggle-AgentDetail:active {
+  transform: scale(0.95);
+}
+
+/* Hamburger Icon */
+.hamburger-icon-AgentDetail {
+  width: 12px;
+  height: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.hamburger-icon-AgentDetail span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--text-inverse);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon-AgentDetail span:nth-child(1) {
+  transform-origin: top left;
+}
+
+.hamburger-icon-AgentDetail span:nth-child(3) {
+  transform-origin: bottom left;
+}
+
+/* Animated hamburger when active */
+.agent-details-toggle-AgentDetail:hover .hamburger-icon-AgentDetail span:nth-child(1) {
+  transform: rotate(45deg) translate(1px, -1px);
+}
+
+.agent-details-toggle-AgentDetail:hover .hamburger-icon-AgentDetail span:nth-child(2) {
+  opacity: 0;
+}
+
+.agent-details-toggle-AgentDetail:hover .hamburger-icon-AgentDetail span:nth-child(3) {
+  transform: rotate(-45deg) translate(1px, 1px);
+}
+
+/* Panel Content */
+.content-AgentDetail {
+  padding: 16px;
+}
+
+/* Agent Info Section */
+.info-AgentDetail {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.avatar-large-AgentDetail {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 12px;
+  box-shadow: 0 4px 15px var(--shadow-medium);
+  animation: pulse-AgentDetail 2s infinite;
+}
+
+.info-AgentDetail h4 {
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.info-AgentDetail p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Capabilities Section */
+.capabilities-AgentDetail {
+  margin-bottom: 20px;
+}
+
+.capabilities-AgentDetail h5 {
+  margin: 0 0 12px 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.capabilities-AgentDetail h5::before {
+  content: '⚡';
+  font-size: 0.9em;
+}
+
+.capabilities-AgentDetail ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.capabilities-AgentDetail li {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: var(--accent-bg);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-left: 3px solid var(--brand-primary);
+  transition: all 0.3s ease;
+}
+
+.capabilities-AgentDetail li:hover {
+  background: var(--brand-primary);
+  color: var(--text-inverse);
+  transform: translateX(4px);
+}
+
+/* Tools Section */
+.tools-AgentDetail h5 {
+  margin: 0 0 12px 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tools-AgentDetail h5::before {
+  content: '🛠️';
+  font-size: 0.9em;
+}
+
+.list-AgentDetail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-AgentDetail {
+  background: var(--btn-secondary);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tag-AgentDetail:hover {
+  background: var(--brand-secondary);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+/* Scrollable Content */
+.always-visible-scroll-AgentDetail {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-medium) var(--primary-bg);
+}
+
+.always-visible-scroll-AgentDetail::-webkit-scrollbar {
+  width: 6px;
+}
+
+.always-visible-scroll-AgentDetail::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+.always-visible-scroll-AgentDetail::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 3px;
+}
+
+.always-visible-scroll-AgentDetail::-webkit-scrollbar-thumb:hover {
+  background: var(--border-dark);
+}
+
+/* Animations */
+@keyframes slide-in-AgentDetail {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-AgentDetail {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-AgentDetail {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer-AgentDetail {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Keep chat visible first; make hover strip 7% width and panel narrow */
+  .hover-reveal-AgentDetail { width: 7vw; }
+  .agent-details-wrapper-AgentDetail { width: 0 !important; }
+  .agent-details-wrapper-AgentDetail.expanded-AgentDetail { width: 70vw !important; }
+  .agent-details-wrapper-AgentDetail.collapsed-AgentDetail { width: 0 !important; height: auto; }
+  .container-AgentDetail { width: 100%; }
+  .chat-wrapper-AgentDetail { width: 100%; order: 1; }
+  .collapsed-toggle-AgentDetail { position: relative; top: auto; right: auto; margin: 0 auto 15px; align-self: center; width: 40px; height: 40px; }
+  .header-AgentDetail .agent-details-toggle-AgentDetail { width: 32px; height: 32px; }
+  .hamburger-icon-AgentDetail { width: 16px; height: 12px; }
+  .hamburger-icon-AgentDetail span { height: 2px; }
+}
+
+@media (max-width: 480px) {
+  /* Keep same behavior as <=768px: collapsed 0, expanded ~70% */
+  .agent-details-wrapper-AgentDetail.expanded-AgentDetail { width: 70vw !important; }
+  .agent-details-wrapper-AgentDetail.collapsed-AgentDetail { width: 0 !important; }
+  
+  .collapsed-toggle-AgentDetail {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .header-AgentDetail .agent-details-toggle-AgentDetail {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .hamburger-icon-AgentDetail {
+    width: 14px;
+    height: 10px;
+  }
+  
+  .content-AgentDetail {
+    padding: 12px;
+  }
+  
+  .capabilities-AgentDetail li {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .tag-AgentDetail {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Dark Theme Adjustments */
+[data-theme="dark"] .agent-details-toggle-AgentDetail,
+[data-theme="dark"] .collapsed-toggle-AgentDetail {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .agent-details-toggle-AgentDetail:hover,
+[data-theme="dark"] .collapsed-toggle-AgentDetail:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Accessibility */
+.agent-details-toggle-AgentDetail:focus-visible,
+.collapsed-toggle-AgentDetail:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .chat-agent-container-AgentDetail,
+  .agent-details-wrapper-AgentDetail,
+  .agent-details-toggle-AgentDetail,
+  .collapsed-toggle-AgentDetail,
+  .hamburger-icon-AgentDetail span,
+  .container-AgentDetail,
+  .capabilities-AgentDetail li,
+  .tag-AgentDetail {
+    transition: none;
+    animation: none;
+  }
+}

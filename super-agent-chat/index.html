@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmXpert SuperAgent - AI Agricultural Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🌾</span>
+                    <h1>FarmXpert</h1>
+                </div>
+                <p class="tagline">AI-Powered Farming Assistant</p>
+            </div>
+
+            <!-- SuperAgent Section -->
+            <div class="super-agent-section">
+                <div class="super-agent-card active" data-agent="super-agent">
+                    <div class="agent-icon">🤖</div>
+                    <div class="agent-info">
+                        <h3>SuperAgent</h3>
+                        <span class="status-indicator active">Active</span>
+                        <p class="agent-description">Your intelligent agricultural assistant that coordinates all specialized agents</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Individual Agents Section -->
+            <div class="individual-agents-section">
+                <h4 class="section-title">Specialized Agents</h4>
+                <div class="agent-categories">
+                    <!-- Crop Planning -->
+                    <div class="agent-category" data-category="crop_planning">
+                        <div class="category-header">
+                            <span class="category-icon">🌱</span>
+                            <span class="category-title">Crop Planning</span>
+                            <span class="category-toggle">▼</span>
+                        </div>
+                        <div class="agent-list">
+                            <div class="agent-item" data-agent="crop_selector">
+                                <span class="agent-icon">🌾</span>
+                                <span class="agent-name">Crop Selector</span>
+                            </div>
+                            <div class="agent-item" data-agent="soil_health">
+                                <span class="agent-icon">🌍</span>
+                                <span class="agent-name">Soil Health</span>
+                            </div>
+                            <div class="agent-item" data-agent="fertilizer_advisor">
+                                <span class="agent-icon">🧪</span>
+                                <span class="agent-name">Fertilizer Advisor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Farm Operations -->
+                    <div class="agent-category" data-category="farm_operations">
+                        <div class="category-header">
+                            <span class="category-icon">🚜</span>
+                            <span class="category-title">Farm Operations</span>
+                            <span class="category-toggle">▼</span>
+                        </div>
+                        <div class="agent-list">
+                            <div class="agent-item" data-agent="task_scheduler">
+                                <span class="agent-icon">📅</span>
+                                <span class="agent-name">Task Scheduler</span>
+                            </div>
+                            <div class="agent-item" data-agent="irrigation_planner">
+                                <span class="agent-icon">💧</span>
+                                <span class="agent-name">Irrigation Planner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics -->
+                    <div class="agent-category" data-category="analytics">
+                        <div class="category-header">
+                            <span class="category-icon">📊</span>
+                            <span class="category-title">Analytics</span>
+                            <span class="category-toggle">▼</span>
+                        </div>
+                        <div class="agent-list">
+                            <div class="agent-item" data-agent="yield_predictor">
+                                <span class="agent-icon">📈</span>
+                                <span class="agent-name">Yield Predictor</span>
+                            </div>
+                            <div class="agent-item" data-agent="market_intelligence">
+                                <span class="agent-icon">💰</span>
+                                <span class="agent-name">Market Intelligence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Farm Info -->
+            <div class="farm-info-section">
+                <h4 class="section-title">Farm Information</h4>
+                <div class="farm-details">
+                    <div class="farm-detail">
+                        <span class="detail-label">Location:</span>
+                        <span class="detail-value" id="farm-location">ahmedabad, India</span>
+                    </div>
+                    <div class="farm-detail">
+                        <span class="detail-label">Size:</span>
+                        <span class="detail-value" id="farm-size">5 acres</span>
+                    </div>
+                    <div class="farm-detail">
+                        <span class="detail-label">Season:</span>
+                        <span class="detail-value" id="current-season">Kharif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Interface -->
+        <div class="main-chat">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="current-agent">
+                    <div class="agent-avatar">🤖</div>
+                    <div class="agent-details">
+                        <h2 id="current-agent-name">SuperAgent</h2>
+                        <p id="current-agent-description">Your intelligent agricultural assistant</p>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="btn btn-outline" id="clear-chat">Clear Chat</button>
+                    <button class="btn btn-primary" id="new-session">New Session</button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chat-messages">
+                <div class="welcome-message">
+                    <div class="welcome-content">
+                        <h3>Welcome to FarmXpert SuperAgent! 🌾</h3>
+                        <p>I'm your intelligent agricultural assistant. I can help you with:</p>
+                        <ul>
+                            <li>🌱 Crop selection and planning</li>
+                            <li>🌍 Soil health analysis</li>
+                            <li>🧪 Fertilizer recommendations</li>
+                            <li>💧 Irrigation planning</li>
+                            <li>📊 Yield predictions</li>
+                            <li>💰 Market intelligence</li>
+                            <li>🚜 Farm operations</li>
+                        </ul>
+                        <p>Just ask me anything about farming, and I'll coordinate with the right specialists to give you the best advice!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea 
+                        id="chat-input" 
+                        placeholder="Ask me anything about farming... (e.g., 'What crops should I plant this season?')"
+                        rows="1"
+                    ></textarea>
+                    <button class="send-button" id="send-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-suggestions">
+                    <span class="suggestion-label">Try asking:</span>
+                    <button class="suggestion-chip" data-query="What crops should I plant this season?">Crop recommendations</button>
+                    <button class="suggestion-chip" data-query="How can I improve my soil health?">Soil health</button>
+                    <button class="suggestion-chip" data-query="What's the weather forecast for my area?">Weather forecast</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agent Details Panel -->
+        <div class="agent-details-panel" id="agent-details-panel">
+            <div class="panel-header">
+                <h3>Agent Details</h3>
+                <button class="close-panel" id="close-panel">×</button>
+            </div>
+            <div class="panel-content" id="panel-content">
+                <div class="agent-info">
+                    <div class="agent-avatar-large">🤖</div>
+                    <h4 id="panel-agent-name">SuperAgent</h4>
+                    <p id="panel-agent-description">Your intelligent agricultural assistant</p>
+                </div>
+                <div class="agent-capabilities">
+                    <h5>Capabilities</h5>
+                    <ul id="agent-capabilities-list">
+                        <li>Coordinates all specialized agents</li>
+                        <li>Provides comprehensive farming advice</li>
+                        <li>Analyzes multiple data sources</li>
+                    </ul>
+                </div>
+                <div class="agent-tools">
+                    <h5>Available Tools</h5>
+                    <div class="tools-list" id="tools-list">
+                        <span class="tool-tag">Soil Analysis</span>
+                        <span class="tool-tag">Weather Data</span>
+                        <span class="tool-tag">Market Intelligence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>SuperAgent is thinking...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

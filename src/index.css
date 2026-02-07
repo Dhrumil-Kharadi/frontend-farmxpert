@@ -1,0 +1,397 @@
+/* LIGHT THEME (Default) */
+:root {
+  /* Primary Colors */
+  --primary-bg: #fafafa;
+  --secondary-bg: #ffffff;
+  --tertiary-bg: #f5f5f5;
+  --accent-bg: #e8f5e8;
+  --for-background: #121212;
+
+  /* Text Colors */
+  --text-primary: #2c2c2c;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --text-inverse: #ffffff;
+
+  /* Farm AI Brand Colors (Unified Green Theme) */
+  --brand-primary: #22c55e; /* Main Green */
+  --brand-secondary: #16a34a; /* Slightly darker */
+  --brand-accent: #15803d; /* Deep accent green */
+  --brand-light: #4ade80; /* Light green */
+  --brand-light-green: #86efac; /* Very light green */
+  --brand-dark-green: #15803d; /* Darker shade */
+
+  /* Interactive Elements */
+  --btn-primary: var(--brand-primary);
+  --btn-primary-hover: var(--brand-secondary);
+  --btn-secondary: #e9ecef;
+  --btn-secondary-hover: #dee2e6;
+  --btn-success: var(--brand-primary);
+  --btn-success-hover: var(--brand-accent);
+  --btn-danger: #dc3545;
+  --btn-danger-hover: #c82333;
+
+  /* Border Colors */
+  --border-light: #e9ecef;
+  --border-medium: #dee2e6;
+  --border-dark: #adb5bd;
+  --border-accent: var(--brand-light);
+
+  /* Shadow Colors */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+  --shadow-dark: rgba(0, 0, 0, 0.25);
+
+  /* Transparent Colors */
+  --overlay-light: rgba(255, 255, 255, 0.9);
+  --overlay-medium: rgba(255, 255, 255, 0.8);
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+
+  /* Status Colors */
+  --success: #22c55e;
+  --success-bg: #dcfce7;
+  --warning: #facc15;
+  --warning-bg: #fef9c3;
+  --error: #ef4444;
+  --error-bg: #fee2e2;
+  --info: #3b82f6;
+  --info-bg: #dbeafe;
+  --processing: #6c757d;
+
+  /* Input Colors */
+  --input-bg: #ffffff;
+  --input-border: var(--border-medium);
+  --input-focus: var(--brand-primary);
+  --input-placeholder: var(--text-muted);
+
+  /* Card Colors */
+  --card-bg: var(--secondary-bg);
+  --card-border: var(--border-light);
+  --card-shadow: var(--shadow-light);
+
+  /* Landing Page Specific Colors */
+  --landing-hero-text: #727272;
+  --landing-section-black: #000000;
+  --landing-card-dark: rgba(20, 20, 20, 0.9);
+  --landing-card-darker: rgba(0, 0, 0, 0.8);
+  --landing-cta-dark: #0a0a0a;
+  --landing-icon-dark: #111111;
+  
+  /* Gradient Colors for "How It Works" */
+  --gradient-orange-pink: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+  --gradient-brown-gold: linear-gradient(135deg, #8B4513 0%, #FFD700 100%);
+  --gradient-blue-navy: linear-gradient(135deg, #6b9dbb 0%, #3b5998 100%);
+  
+  /* Shadow Colors with Green Tint */
+  --shadow-green-light: rgba(34, 197, 94, 0.3);
+  --shadow-green-medium: rgba(34, 197, 94, 0.4);
+  --shadow-green-dark: rgba(34, 197, 94, 0.2);
+
+  --title-color: rgb(13, 78, 37);
+  
+  /* White Colors */
+  --white-full: #ffffff;
+  --white-translucent-10: rgba(255, 255, 255, 0.1);
+  --white-translucent-20: rgba(255, 255, 255, 0.2);
+  --white-translucent-05: rgba(255, 255, 255, 0.05);
+  
+  /* Green Translucent */
+  --green-translucent-10: rgba(34, 197, 94, 0.1);
+
+  /* Landing Page Theme-Responsive Variables - LIGHT THEME */
+  --landing-section-bg: #f5f5f5;
+  --landing-section-alternate-bg: #ffffff;
+  --landing-cta-bg: #fafafa;
+  --landing-card-bg: rgba(255, 255, 255, 0.95);
+  --landing-card-alternate-bg: rgba(255, 255, 255, 0.9);
+  --landing-card-border: rgba(0, 0, 0, 0.1);
+  --landing-card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --landing-card-shadow-hover: 0 20px 60px rgba(34, 197, 94, 0.15);
+  --landing-card-shimmer: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+  --landing-title-color: #2c2c2c;
+  --landing-subtitle-color: #666666;
+  --landing-description-color: #666666;
+  --landing-hero-color: #ffffff;
+  --landing-hero-gradient: linear-gradient(135deg, #2c2c2c 0%, var(--brand-primary) 100%);
+  --landing-hero-title-gradient: linear-gradient(135deg, #177e49 0%, #25af6f 50%, #28cf81 100%);
+  --btn-secondary-landing: rgba(255, 255, 255, 0.9);
+  --btn-secondary-landing-hover: rgba(255, 255, 255, 1);
+  
+  /* How It Works section - Light theme specific */
+  --how-it-works-title-color: #2c2c2c;
+  --how-it-works-subtitle-color: #666666;
+  --transparent-light: rgba(255, 255, 255, 0.5);
+  --transparent: #ffffff00;
+}
+
+/* DARK THEME */
+[data-theme="dark"] {
+  /* Primary Colors */
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #222222;
+  --tertiary-bg: #2d2d2d;
+  --accent-bg: #142015;
+  --for-background: #efefef;
+
+  /* Text Colors */
+  --text-primary: #e5e5e5;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  --text-inverse: #1a1a1a;
+
+  /* Brand Colors (Dark Adjusted) */
+  --brand-primary: #22c55e; /* Same main green */
+  --brand-secondary: #16a34a;
+  --brand-accent: #15803d;
+  --brand-light: #4ade80;
+  --brand-light-green: #166534;
+  --brand-dark-green: #14532d;
+
+  /* Interactive Elements */
+  --btn-primary: var(--brand-primary);
+  --btn-primary-hover: #16a34a;
+  --btn-secondary: #2d2d2d;
+  --btn-secondary-hover: #3a3a3a;
+  --btn-success: var(--brand-primary);
+  --btn-success-hover: var(--brand-accent);
+  --btn-danger: #ef4444;
+  --btn-danger-hover: #dc2626;
+
+  /* Border Colors */
+  --border-light: #333333;
+  --border-medium: #444444;
+  --border-dark: #555555;
+  --border-accent: var(--brand-accent);
+
+  /* Shadow Colors */
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.5);
+  --shadow-dark: rgba(0, 0, 0, 0.7);
+
+  --title-color: rgb(50, 182, 120);
+
+  /* Transparent Colors */
+  --overlay-light: rgba(26, 26, 26, 0.9);
+  --overlay-medium: rgba(26, 26, 26, 0.8);
+  --overlay-dark: rgba(0, 0, 0, 0.8);
+  --glass-bg: rgba(43, 43, 43, 0.253);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* Status Colors */
+  --success: #22c55e;
+  --success-bg: #14532d;
+  --warning: #facc15;
+  --warning-bg: #3d3017;
+  --error: #ef4444;
+  --error-bg: #3d1a1a;
+  --info: #3b82f6;
+  --info-bg: #1a2332;
+  --processing: #9ca3af;
+
+  /* Input Colors */
+  --input-bg: var(--secondary-bg);
+  --input-border: var(--border-medium);
+  --input-focus: var(--brand-primary);
+  --input-placeholder: var(--text-muted);
+
+  /* Card Colors */
+  --card-bg: var(--secondary-bg);
+  --card-border: var(--border-light);
+  --card-shadow: var(--shadow-medium);
+
+  /* Landing Page Specific Colors - Dark Theme */
+  --landing-hero-text: #cbd5e1;
+  --landing-section-black: #000000;
+  --landing-card-dark: rgba(20, 20, 20, 0.9);
+  --landing-card-darker: rgba(0, 0, 0, 0.8);
+  --landing-cta-dark: #0a0a0a;
+  --landing-icon-dark: #111111;
+  
+  /* Gradients remain same in dark theme */
+  --gradient-orange-pink: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+  --gradient-brown-gold: linear-gradient(135deg, #8B4513 0%, #FFD700 100%);
+  --gradient-blue-navy: linear-gradient(135deg, #6b9dbb 0%, #3b5998 100%);
+  
+  /* Shadow Colors with Green Tint - Dark Theme */
+  --shadow-green-light: rgba(34, 197, 94, 0.3);
+  --shadow-green-medium: rgba(34, 197, 94, 0.4);
+  --shadow-green-dark: rgba(34, 197, 94, 0.2);
+  
+  /* White Colors remain same */
+  --white-full: #ffffff;
+  --white-translucent-10: rgba(255, 255, 255, 0.1);
+  --white-translucent-20: rgba(255, 255, 255, 0.2);
+  --white-translucent-05: rgba(255, 255, 255, 0.05);
+  
+  /* Green Translucent */
+  --green-translucent-10: rgba(34, 197, 94, 0.1);
+
+  /* Landing Page Theme-Responsive Variables - DARK THEME */
+  --landing-section-bg: #000000;
+  --landing-section-alternate-bg: #0a0a0a;
+  --landing-cta-bg: #0a0a0a;
+  --landing-card-bg: rgba(20, 20, 20, 0.9);
+  --landing-card-alternate-bg: rgba(0, 0, 0, 0.8);
+  --landing-card-border: rgba(255, 255, 255, 0.1);
+  --landing-card-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  --landing-card-shadow-hover: 0 20px 60px rgba(34, 197, 94, 0.2);
+  --landing-card-shimmer: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+  --landing-title-color: #ffffff;
+  --landing-subtitle-color: #cbd5e1;
+  --landing-description-color: #cbd5e1;
+  --landing-hero-color: #ffffff;
+  --landing-hero-gradient: linear-gradient(135deg, #ffffff 0%, var(--brand-primary) 100%);
+  --landing-hero-title-gradient: linear-gradient(135deg, #ffffff 0%, var(--brand-primary) 50%, var(--brand-light) 100%);
+  --btn-secondary-landing: rgba(255, 255, 255, 0.1);
+  --btn-secondary-landing-hover: rgba(255, 255, 255, 0.2);
+  
+  /* How It Works section - Dark theme specific */
+  --how-it-works-title-color: #ffffff;
+  --how-it-works-subtitle-color: #cbd5e1;
+  --transparent-light: rgba(37, 37, 37, 0.247);
+  --transparent: #ffffff00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-dark);
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* @keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+} */
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+}

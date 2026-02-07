@@ -1,0 +1,46 @@
+.main-dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  transition: background-color 0.3s ease;
+}
+
+.main-dashboard-content {
+  flex: 1;
+  /* default: desktop baseline; will be overridden by media queries and toggle state */
+  margin-left: 15.625%;
+  width: 100%;
+  background-color: var(--secondary-bg);
+  min-height: 100vh;
+  transition: margin-left 0.3s ease, background-color 0.3s ease;
+}
+
+/* Responsive adjustments per requirements */
+@media (min-width: 1025px) {
+  .main-dashboard-content {
+    margin-left: 15.625%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-dashboard-content {
+    margin-left: 8%;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-dashboard-content {
+    margin-left: 0;
+  }
+}
+
+/* When sidebar/menu is toggled off, force margin-left: 0 for all sizes */
+.sidebar-closed .main-dashboard-content {
+  margin-left: 0 !important;
+}
+
+/* Ensure content doesn't get cut off */
+.main-dashboard-content > * {
+  width: 100%;
+  box-sizing: border-box;
+}

@@ -1,0 +1,227 @@
+.agent-catalog-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 22px 22px 28px;
+  background: var(--primary-bg);
+}
+
+.agent-catalog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.agent-catalog-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.agent-catalog-subtitle {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.agent-catalog-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.agent-catalog-search {
+  position: relative;
+  width: 260px;
+  max-width: 100%;
+}
+
+.agent-catalog-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  display: inline-flex;
+  pointer-events: none;
+}
+
+.agent-catalog-search-input {
+  width: 100%;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+  padding: 0 12px 0 32px;
+  font-size: 12px;
+  outline: none;
+}
+
+.agent-catalog-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.agent-catalog-search-input:focus {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px var(--green-translucent-10);
+}
+
+.agent-catalog-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.agent-catalog-chip {
+  border-radius: 999px;
+  padding: 6px 10px;
+  border: 1px solid var(--border-light);
+  background: var(--secondary-bg);
+  color: var(--text-secondary);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.agent-catalog-chip.active {
+  background: var(--btn-primary);
+  border-color: var(--btn-primary);
+  color: var(--text-inverse);
+}
+
+.agent-catalog-chip:hover {
+  border-color: var(--border-accent);
+}
+
+.agent-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.agent-catalog-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  box-shadow: 0 10px 26px var(--card-shadow);
+  padding: 12px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.agent-catalog-card:hover {
+  cursor: pointer;
+  transform: translateY(0px);
+  box-shadow: 0 12px 30px var(--shadow-medium);
+}
+
+.agent-catalog-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.agent-catalog-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  background: var(--tertiary-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.agent-catalog-card:hover .agent-catalog-icon {
+  background: var(--accent-bg);
+  color: var(--brand-primary);
+}
+
+.agent-catalog-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  background: var(--secondary-bg);
+}
+
+.agent-catalog-badge.core {
+  border-color: var(--border-accent);
+  color: var(--brand-accent);
+}
+
+.agent-catalog-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.agent-catalog-card-desc {
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+.agent-catalog-card-body {
+  flex: 1;
+}
+
+.agent-catalog-card-footer {
+  margin-top: 10px;
+}
+
+.agent-catalog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.agent-catalog-tag {
+  font-size: 10px;
+  padding: 4px 7px;
+  border-radius: 7px;
+  border: 1px solid var(--border-light);
+  background: var(--tertiary-bg);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.agent-catalog-tag-more {
+  background: var(--secondary-bg);
+}
+
+@media (max-width: 1200px) {
+  .agent-catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .agent-catalog-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .agent-catalog-header-right {
+    justify-content: flex-start;
+  }
+
+  .agent-catalog-search {
+    width: 100%;
+  }
+
+  .agent-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
