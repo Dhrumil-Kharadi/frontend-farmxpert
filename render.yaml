@@ -1,10 +1,7 @@
-services:
-  - type: web
-    name: farmxpert-frontend
-    env: static
-    plan: free
-    buildCommand: "npm install && npm run build"
-    staticPublishPath: "build"
+static_sites:
+  - name: farmxpert-frontend
+    buildCommand: npm install && npm run build
+    publicPath: /build
     routes:
       - type: rewrite
         source: "/*"
