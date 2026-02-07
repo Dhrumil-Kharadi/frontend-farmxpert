@@ -1,7 +1,8 @@
 static_sites:
   - name: farmxpert-frontend
+    env: static
     buildCommand: npm install && npm run build
-    publicPath: /build
+    staticPublishPath: build
     routes:
       - type: rewrite
         source: "/*"
